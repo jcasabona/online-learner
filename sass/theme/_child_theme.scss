@@ -1,0 +1,115 @@
+body {
+    font-family: $font-text;
+    font-size: 62.5%;
+}
+
+a {
+    @include link-colors( $color-primary, lighten($color-primary, 10%));
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: $font-display;
+    margin-top: $padding-base;
+}
+
+p,
+ul,
+ol {
+    @include font-size(1.2);
+    line-height: 1.6em;
+}
+
+
+.top-bar {
+    background: $color-secondary;
+    color: $color-white;
+    padding: $padding-small 0;
+    text-align: right;
+
+    ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+
+        li {
+            display: inline-block;
+            @include font-size(0.9);
+            padding: $padding-small;
+
+            &:last-child {
+                padding-right: none;
+            }
+
+            a {
+                @include link-colors($color-white, darken($color-white, 15%));
+            }
+        }
+    }
+}
+
+.woocommerce #content div.product div.images, .woocommerce div.product div.images, .woocommerce-page #content div.product div.images, .woocommerce-page div.product div.images {
+    float: none;
+    width: auto;
+}
+
+.woocommerce #content div.product div.summary, .woocommerce div.product div.summary, .woocommerce-page #content div.product div.summary, .woocommerce-page div.product div.summary {
+    float: none;
+    width: auto;
+}
+
+.woocommerce #content div.product div.summary {
+    h1.product_title {
+        float: left;
+    }
+
+    p.price {
+        @include font-size(1.8);
+        font-weight: bold;
+        float: right;
+    }
+
+    div.lead {
+        clear: both;
+        margin-top: $padding-base;
+    }
+
+    form.cart {
+        text-align: right;
+
+        .quantity {
+            display: none;
+        }
+
+        .single_add_to_cart_button {
+            background: $color-secondary;
+            @include font-size(1.4);
+            float: right;
+            padding: $padding-large;
+
+        }
+    }
+}
+
+a.btn-outline-primary, .wpcf7 input[type=submit] {
+    @include link-colors($color-white, $color-white);
+    background: $color-secondary;
+    border: 0;
+    @include font-size(1.4);
+    margin: 0 auto;
+    max-width: 300px;
+    padding: $padding-large;
+}
+
+.woocommerce-price-amount,
+.amount {
+    display: block;
+    @include font-size(1.6);
+    font-weight: bold;
+    margin: $padding-base;
+    text-align: center;
+}
