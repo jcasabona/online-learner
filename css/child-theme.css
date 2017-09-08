@@ -9141,7 +9141,13 @@ a.skip-link {
 
 body {
   font-family: "Merriweather", "Times New Roman", serif;
-  font-size: 62.5%; }
+  font-size: 62.5%;
+  background: #343a40;
+  color: #FFFFFF; }
+
+#page {
+  background: #FFFFFF;
+  color: #333333; }
 
 a:link, a:visited {
   color: #10617e; }
@@ -9156,14 +9162,23 @@ h4,
 h5,
 h6 {
   font-family: "Playfair Display", Georgia, Garamond, serif;
-  margin-top: 12px; }
+  margin: 0 0 6px; }
+
+.h3,
+h3 {
+  font-size: 20 px;
+  font-size: 2rem; }
 
 p,
 ul,
-ol {
+ol,
+div {
   font-size: 12 px;
   font-size: 1.2rem;
-  line-height: 1.6em; }
+  line-height: 1.72em; }
+
+p {
+  padding: 6px 0 12px; }
 
 .top-bar {
   background: #d9534f;
@@ -9186,12 +9201,92 @@ ol {
       .top-bar ul li a:hover, .top-bar ul li a:focus, .top-bar ul li a:active {
         color: #d9d9d9; }
 
+.navbar-expand-md .navbar-collapse {
+  flex-direction: row-reverse; }
+
+aside.footer-widgets.bg-dark,
+footer.footer-main.bg-dark {
+  color: #FFFFFF; }
+  aside.footer-widgets.bg-dark a:link, aside.footer-widgets.bg-dark a:visited,
+  footer.footer-main.bg-dark a:link,
+  footer.footer-main.bg-dark a:visited {
+    color: #FFFFFF; }
+  aside.footer-widgets.bg-dark a:hover, aside.footer-widgets.bg-dark a:focus, aside.footer-widgets.bg-dark a:active,
+  footer.footer-main.bg-dark a:hover,
+  footer.footer-main.bg-dark a:focus,
+  footer.footer-main.bg-dark a:active {
+    color: #e6e6e6; }
+
+.learndash-widgets aside {
+  margin-bottom: 48px;
+  padding: 0 6px; }
+
+footer.footer-main {
+  text-align: center; }
+
+.bg-image {
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-attachment: scroll;
+  background-size: cover; }
+  .bg-image.center {
+    margin-bottom: 24px; }
+  .bg-image header.entry-header {
+    background: rgba(0, 0, 0, 0.5);
+    color: #FFFFFF;
+    padding: 180px 0; }
+    @media (max-width: 768px) {
+      .bg-image header.entry-header {
+        padding: 50px 0; } }
+    .bg-image header.entry-header h1 {
+      margin-top: 0; }
+    .bg-image header.entry-header a:link, .bg-image header.entry-header a:visited {
+      color: #FFFFFF; }
+    .bg-image header.entry-header a:hover, .bg-image header.entry-header a:focus, .bg-image header.entry-header a:active {
+      color: #eeeeee; }
+
+section.blog-article {
+  border-bottom: 1px solid #4d4d4d;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  margin-bottom: 24px; }
+  section.blog-article h2.entry-title {
+    margin-top: 0; }
+
+.entry-meta {
+  font-size: 9 px;
+  font-size: 0.9rem;
+  margin: 12px 0;
+  padding: 12px; }
+
+.entry-footer {
+  background: #eeeeee;
+  font-size: 9 px;
+  font-size: 0.9rem;
+  padding: 12px; }
+
+.nav-links {
+  border-top: 1px solid #333333;
+  margin: 0 0 48px;
+  padding: 6px 0; }
+  .nav-links::after {
+    display: block;
+    clear: both;
+    content: ""; }
+
 .woocommerce #content div.product div.images, .woocommerce div.product div.images, .woocommerce-page #content div.product div.images, .woocommerce-page div.product div.images {
   float: none;
   width: auto; }
 
 .woocommerce #content div.product div.summary, .woocommerce div.product div.summary, .woocommerce-page #content div.product div.summary, .woocommerce-page div.product div.summary {
   float: none;
+  width: auto; }
+
+.woocommerce table.shop_table {
+  font-size: 14 px;
+  font-size: 1.4rem; }
+
+.woocommerce table.cart td.actions .input-text, .woocommerce-page #content table.cart td.actions .input-text, .woocommerce-page table.cart td.actions .input-text {
   width: auto; }
 
 .woocommerce #content div.product div.summary h1.product_title {
@@ -9218,7 +9313,8 @@ ol {
     float: right;
     padding: 24px; }
 
-a.btn-outline-primary, .wpcf7 input[type=submit] {
+a.btn-outline-primary, .wpcf7 input[type=submit],
+.gform_wrapper .gform_footer input.button, .gform_wrapper .gform_footer input[type="submit"], .gform_wrapper .gform_page_footer input.button, .gform_wrapper .gform_page_footer input[type="submit"] {
   background: #d9534f;
   border: 0;
   font-size: 14 px;
@@ -9226,10 +9322,26 @@ a.btn-outline-primary, .wpcf7 input[type=submit] {
   margin: 0 auto;
   max-width: 300px;
   padding: 24px; }
-  a.btn-outline-primary:link, a.btn-outline-primary:visited, .wpcf7 input[type=submit]:link, .wpcf7 input[type=submit]:visited {
+  a.btn-outline-primary:link, a.btn-outline-primary:visited, .wpcf7 input[type=submit]:link, .wpcf7 input[type=submit]:visited,
+  .gform_wrapper .gform_footer input.button:link,
+  .gform_wrapper .gform_footer input.button:visited, .gform_wrapper .gform_footer input[type="submit"]:link, .gform_wrapper .gform_footer input[type="submit"]:visited, .gform_wrapper .gform_page_footer input.button:link, .gform_wrapper .gform_page_footer input.button:visited, .gform_wrapper .gform_page_footer input[type="submit"]:link, .gform_wrapper .gform_page_footer input[type="submit"]:visited {
     color: #FFFFFF; }
-  a.btn-outline-primary:hover, a.btn-outline-primary:focus, a.btn-outline-primary:active, .wpcf7 input[type=submit]:hover, .wpcf7 input[type=submit]:focus, .wpcf7 input[type=submit]:active {
+  a.btn-outline-primary:hover, a.btn-outline-primary:focus, a.btn-outline-primary:active, .wpcf7 input[type=submit]:hover, .wpcf7 input[type=submit]:focus, .wpcf7 input[type=submit]:active,
+  .gform_wrapper .gform_footer input.button:hover,
+  .gform_wrapper .gform_footer input.button:focus,
+  .gform_wrapper .gform_footer input.button:active, .gform_wrapper .gform_footer input[type="submit"]:hover, .gform_wrapper .gform_footer input[type="submit"]:focus, .gform_wrapper .gform_footer input[type="submit"]:active, .gform_wrapper .gform_page_footer input.button:hover, .gform_wrapper .gform_page_footer input.button:focus, .gform_wrapper .gform_page_footer input.button:active, .gform_wrapper .gform_page_footer input[type="submit"]:hover, .gform_wrapper .gform_page_footer input[type="submit"]:focus, .gform_wrapper .gform_page_footer input[type="submit"]:active {
     color: #FFFFFF; }
+
+a.btn-primary:link, a.btn-primary:visited,
+.fl-button:link,
+.fl-button:visited {
+  color: #FFFFFF; }
+
+a.btn-primary:hover, a.btn-primary:focus, a.btn-primary:active,
+.fl-button:hover,
+.fl-button:focus,
+.fl-button:active {
+  color: #FFFFFF; }
 
 .woocommerce-price-amount,
 .amount {
@@ -9238,4 +9350,169 @@ a.btn-outline-primary, .wpcf7 input[type=submit] {
   font-size: 1.6rem;
   font-weight: bold;
   margin: 12px;
+  text-align: center; }
+
+.woocommerce-loop-product__title {
+  text-align: center; }
+
+.product_meta {
+  display: none; }
+
+.woocommerce div.product .woocommerce-tabs ul.tabs {
+  margin-bottom: 0; }
+
+.woocommerce div.product .woocommerce-tabs ul.tabs li,
+.woocommerce div.product .woocommerce-tabs ul.tabs li:active {
+  border: 0;
+  border-radius: 0;
+  position: initial;
+  z-index: 1; }
+
+.woocommerce-Tabs-panel.woocommerce-Tabs-panel--description > h2 {
+  display: none; }
+
+.woocommerce-Tabs-panel.woocommerce-Tabs-panel--reviews.wc-tab {
+  background: rgba(16, 120, 125, 0.1); }
+  .woocommerce-Tabs-panel.woocommerce-Tabs-panel--reviews.wc-tab h2 {
+    margin-top: 0; }
+  .woocommerce-Tabs-panel.woocommerce-Tabs-panel--reviews.wc-tab .woocommerce-Reviews {
+    padding: 24px; }
+
+@media screen and (min-width: 600px) {
+  body:not(.home) .products ul, body:not(.home) ul.products {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 24px; } }
+
+@media screen and (min-width: 768px) {
+  body:not(.home) .products ul, body:not(.home) ul.products {
+    grid-template-columns: 1fr 1fr 1fr; } }
+
+body:not(.home) .products ul:before, body:not(.home) ul.products:before {
+  display: none;
+  content: ''; }
+
+body:not(.home) .products ul li.product, body:not(.home) ul.products li.product {
+  float: none;
+  margin: 0;
+  padding: 0;
+  position: inherit;
+  width: auto; }
+  @media screen and (max-width: 599px) {
+    body:not(.home) .products ul li.product, body:not(.home) ul.products li.product {
+      margin-bottom: 24px; } }
+
+/** Hide Email Drip Course Controls **/
+.tag-drip-lesson #sfwd-mark-complete,
+.tag-drip-lesson #learndash_next_prev_link,
+.tag-drip-course #learndash_course_content {
+  display: none; }
+
+/** Course Table **/
+#learndash_lessons,
+#learndash_lesson_topics_list {
+  border: 0;
+  font-size: 12 px;
+  font-size: 1.2rem; }
+  #learndash_lessons a,
+  #learndash_lessons .learndash_topic_dots a > span,
+  #learndash_lesson_topics_list a,
+  #learndash_lesson_topics_list .learndash_topic_dots a > span {
+    font-size: 12 px;
+    font-size: 1.2rem; }
+  #learndash_lessons #lesson_heading,
+  #learndash_lesson_topics_list #lesson_heading {
+    background: none;
+    border-radius: 0 !important;
+    padding: 6px; }
+  #learndash_lessons .right,
+  #learndash_lesson_topics_list .right {
+    display: none;
+    width: auto; }
+  #learndash_lessons #lesson_list .list-count,
+  #learndash_lessons #lessons_list > div > div,
+  #learndash_lesson_topics_list #lesson_list .list-count,
+  #learndash_lesson_topics_list #lessons_list > div > div {
+    border-right: 0; }
+  .single-product #learndash_lessons .notcompleted,
+  .single-product #learndash_lessons .topic-notcompleted span, .single-product
+  #learndash_lesson_topics_list .notcompleted,
+  .single-product
+  #learndash_lesson_topics_list .topic-notcompleted span {
+    background: none !important; }
+  .single-product #learndash_lessons .topic-notcompleted span, .single-product
+  #learndash_lesson_topics_list .topic-notcompleted span {
+    padding: 6px; }
+
+#learndash_course_content .learndash_topic_dots ul > li {
+  background: none !important;
+  border-bottom: 1px solid #F3F3F3; }
+
+.ld-wrapper {
+  margin: 0; }
+
+.ld-video {
+  background: #333333;
+  margin: 0 auto;
+  text-align: center; }
+  .ld-video iframe {
+    width: 100%; }
+
+.ld_content_area {
+  margin-top: 24px; }
+
+.ld-featured-image.center {
+  margin: 0 auto 48px; }
+
+.ld-nav {
+  background: #eeeeee;
+  margin-top: 48px;
+  padding: 6px; }
+  .ld-nav::after {
+    display: block;
+    clear: both;
+    content: ""; }
+
+.topic-info {
+  border-left: 1px solid #eeeeee; }
+
+.online-learner .gform_wrapper .gform_footer input.button, .online-learner .gform_wrapper .gform_footer input[type="submit"], .online-learner .gform_wrapper .gform_page_footer input.button, .online-learner .gform_wrapper .gform_page_footer input[type="submit"] {
+  color: #FFFFFF;
+  border-radius: 4px;
+  font-size: 14 px;
+  font-size: 1.4rem;
+  width: 100%;
+  max-width: 300px; }
+  .online-learner .gform_wrapper .gform_footer input.button:link, .online-learner .gform_wrapper .gform_footer input.button:visited, .online-learner .gform_wrapper .gform_footer input[type="submit"]:link, .online-learner .gform_wrapper .gform_footer input[type="submit"]:visited, .online-learner .gform_wrapper .gform_page_footer input.button:link, .online-learner .gform_wrapper .gform_page_footer input.button:visited, .online-learner .gform_wrapper .gform_page_footer input[type="submit"]:link, .online-learner .gform_wrapper .gform_page_footer input[type="submit"]:visited {
+    color: #FFFFFF; }
+  .online-learner .gform_wrapper .gform_footer input.button:hover, .online-learner .gform_wrapper .gform_footer input.button:focus, .online-learner .gform_wrapper .gform_footer input.button:active, .online-learner .gform_wrapper .gform_footer input[type="submit"]:hover, .online-learner .gform_wrapper .gform_footer input[type="submit"]:focus, .online-learner .gform_wrapper .gform_footer input[type="submit"]:active, .online-learner .gform_wrapper .gform_page_footer input.button:hover, .online-learner .gform_wrapper .gform_page_footer input.button:focus, .online-learner .gform_wrapper .gform_page_footer input.button:active, .online-learner .gform_wrapper .gform_page_footer input[type="submit"]:hover, .online-learner .gform_wrapper .gform_page_footer input[type="submit"]:focus, .online-learner .gform_wrapper .gform_page_footer input[type="submit"]:active {
+    color: #FFFFFF; }
+
+.not-found-widgets {
+  display: grid;
+  grid-gap: 24px;
+  grid-template-columns: 1fr 1fr;
+  margin: 24px 0; }
+  .not-found-widgets aside {
+    background: rgba(16, 120, 125, 0.2);
+    padding: 24px; }
+
+.left,
+.right,
+.next-link,
+.prev-link {
+  margin: 12px; }
+
+.left,
+.prev-link,
+.nav-previous {
+  float: left; }
+
+.right,
+.next-link,
+.nav-next {
+  float: right; }
+
+.center {
+  margin: 0 auto;
   text-align: center; }

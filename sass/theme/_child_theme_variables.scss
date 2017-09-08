@@ -12,10 +12,12 @@ $brand-primary:         #fece00; //#ff6d5a
 $color-primary: #10617e;
 $color-secondary: #d9534f;
 $color-accent: #10787d;
+$color-dark: #343a40;
 
 $color-white: #FFFFFF;
 $color-black: #000000;
 $color-grey: #333333;
+$color-grey-light: darken(#F3F3F3, 2%);
 
 // Fonts
 $font-display: 'Playfair Display', Georgia, Garamond, serif;

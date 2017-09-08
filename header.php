@@ -23,7 +23,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 	<?php wp_head(); ?>
 </head>
 
-<body <?php body_class(); ?>>
+<body <?php body_class( 'online-learner' ); ?>>
 
 <div class="hfeed site" id="page">
 

@@ -1,6 +1,13 @@
 body {
     font-family: $font-text;
     font-size: 62.5%;
+    background: $color-dark;
+    color: $color-white;
+}
+
+#page {
+    background: $color-white;
+    color: $color-grey;
 }
 
 a {
@@ -14,14 +21,24 @@ h4,
 h5,
 h6 {
     font-family: $font-display;
-    margin-top: $padding-base;
+    margin: 0 0 $padding-small;
+}
+
+.h3,
+h3 {
+    @include font-size(2);
 }
 
 p,
 ul,
-ol {
+ol,
+div {
     @include font-size(1.2);
-    line-height: 1.6em;
+    line-height: 1.72em;
+}
+
+p {
+    padding: $padding-small 0 $padding-base;
 }
 
 
@@ -52,6 +69,97 @@ ol {
     }
 }
 
+.navbar-expand-md .navbar-collapse {
+    flex-direction: row-reverse;
+}
+
+aside.footer-widgets,
+footer.footer-main {
+    &.bg-dark {
+        color: $color-white;
+
+        a {
+            @include link-colors($color-white, darken($color-white, 10%));
+        }
+    }
+}
+
+.learndash-widgets {
+    aside {
+        margin-bottom: $padding-large * 2;
+        padding: 0 $padding-small;
+    }
+}
+
+footer.footer-main {
+    text-align: center;
+}
+
+// Blog Styles
+
+.bg-image {
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: scroll;
+    background-size: cover;
+    
+    &.center {
+        margin-bottom: $padding-large;
+    }
+
+    header.entry-header {
+        background: rgba($color-black, 0.5);
+        color: $color-white;
+        padding: 180px 0;
+
+        @media (max-width: 768px) {
+            padding: 50px 0;
+        }
+
+        h1 {
+            margin-top: 0;
+        }
+
+        a {
+            @include link-colors($color-white, $color-grey-light);
+        }
+    }
+}
+
+section.blog-article {
+    border-bottom: 1px solid lighten($color-grey, 10%);
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    margin-bottom: $padding-large;
+
+    h2.entry-title {
+        margin-top: 0;
+    }
+}
+
+
+.entry-meta {
+    @include font-size(0.9);
+    margin: $padding-base 0;
+    padding: $padding-base;
+}
+
+.entry-footer {
+    background: $color-grey-light;
+    @include font-size(0.9);
+    padding: $padding-base; 
+}
+
+.nav-links {
+    border-top: 1px solid $color-grey;
+    margin: 0 0 $padding-large * 2;
+    padding: $padding-small 0;
+    @include clearfix();
+}
+
+
+// WooCommerce Overrides
+
 .woocommerce #content div.product div.images, .woocommerce div.product div.images, .woocommerce-page #content div.product div.images, .woocommerce-page div.product div.images {
     float: none;
     width: auto;
@@ -59,6 +167,14 @@ ol {
 
 .woocommerce #content div.product div.summary, .woocommerce div.product div.summary, .woocommerce-page #content div.product div.summary, .woocommerce-page div.product div.summary {
     float: none;
+    width: auto;
+}
+
+.woocommerce table.shop_table {
+    @include font-size(1.4);
+}
+
+.woocommerce table.cart td.actions .input-text, .woocommerce-page #content table.cart td.actions .input-text, .woocommerce-page table.cart td.actions .input-text {
     width: auto;
 }
 
@@ -95,7 +211,8 @@ ol {
     }
 }
 
-a.btn-outline-primary, .wpcf7 input[type=submit] {
+a.btn-outline-primary, .wpcf7 input[type=submit], 
+.gform_wrapper .gform_footer input.button, .gform_wrapper .gform_footer input[type="submit"], .gform_wrapper .gform_page_footer input.button, .gform_wrapper .gform_page_footer input[type="submit"] {
     @include link-colors($color-white, $color-white);
     background: $color-secondary;
     border: 0;
@@ -105,11 +222,224 @@ a.btn-outline-primary, .wpcf7 input[type=submit] {
     padding: $padding-large;
 }
 
+a.btn-primary,
+.fl-button {
+    @include link-colors($color-white, $color-white);
+}
+
 .woocommerce-price-amount,
 .amount {
     display: block;
     @include font-size(1.6);
     font-weight: bold;
     margin: $padding-base;
+    text-align: center;
+}
+
+.woocommerce-loop-product__title {
+    text-align: center;
+}
+
+.product_meta {
+    display: none;
+}
+
+
+.woocommerce div.product .woocommerce-tabs ul.tabs {
+    margin-bottom: 0;
+}
+
+.woocommerce div.product .woocommerce-tabs ul.tabs li,
+.woocommerce div.product .woocommerce-tabs ul.tabs li:active {
+    border: 0;
+    border-radius: 0;
+    position: initial;
+    z-index: 1;
+}
+
+.woocommerce-Tabs-panel {
+    &.woocommerce-Tabs-panel--description {
+        & > h2 {
+            display: none;
+        }
+    }
+
+    &.woocommerce-Tabs-panel--reviews.wc-tab {
+        background: rgba($color-accent, 0.1);
+
+        h2 {
+            margin-top: 0;
+        }
+
+        .woocommerce-Reviews {
+            padding: $padding-large;
+        }
+    }
+}
+
+body:not(.home) .products ul, body:not(.home) ul.products {
+    @media screen and (min-width: 600px) {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: $padding-large;
+    }
+
+    @media screen and (min-width: 768px) {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    &:before {
+        display: none;
+        content: '';
+    }
+
+    li.product {
+        float: none;
+        margin: 0;
+        padding: 0;
+        position: inherit;
+        width: auto;
+
+        @media screen and (max-width: 599px) {
+            margin-bottom: $padding-large;
+        }
+    }
+}
+
+// Learn Dash Overrides
+
+/** Hide Email Drip Course Controls **/
+.tag-drip-lesson #sfwd-mark-complete,
+.tag-drip-lesson #learndash_next_prev_link,
+.tag-drip-course #learndash_course_content {
+	display: none;
+}
+
+/** Course Table **/
+#learndash_lessons,
+#learndash_lesson_topics_list {
+    border: 0;
+    @include font-size(1.2);
+
+    a,
+    .learndash_topic_dots a > span {
+        @include font-size(1.2);  
+    }
+
+    #lesson_heading {
+        background: none;
+        border-radius: 0 !important;
+        padding: $padding-small;
+    }
+
+    .right {
+        display: none;
+        width: auto;
+    }
+
+    #lesson_list .list-count,
+    #lessons_list > div > div {
+        border-right: 0;
+    }
+
+    .single-product & .notcompleted,
+    .single-product & .topic-notcompleted span {
+        background: none !important;
+    }
+
+    .single-product & .topic-notcompleted span {
+        padding: $padding-small;
+    }
+}
+
+#learndash_course_content .learndash_topic_dots ul > li {
+    background: none !important;
+    border-bottom: 1px solid #F3F3F3;
+}
+
+.ld-wrapper {
+    margin: 0;
+}
+
+.ld-video {
+    background: $color-grey;
+    margin: 0 auto;
+    text-align: center;
+
+    iframe {
+        width: 100%;
+    }
+}
+
+.ld_content_area {
+    margin-top: $padding-large;
+}
+
+.ld-featured-image {
+
+    &.center {
+        margin: 0 auto $padding-large * 2;
+    }
+}
+
+.ld-nav {
+    background: $color-grey-light;
+    margin-top: $padding-large * 2;
+    padding: $padding-small;
+    @include clearfix();
+}
+
+.topic-info {
+    border-left: 1px solid $color-grey-light;
+}
+
+// Gravity Forms
+.online-learner {
+    .gform_wrapper .gform_footer input.button, .gform_wrapper .gform_footer input[type="submit"], .gform_wrapper .gform_page_footer input.button, .gform_wrapper .gform_page_footer input[type="submit"] {
+        color: $color-white;
+        @include border-radius(4px);
+        @include font-size(1.4);
+        @include link-colors($color-white, $color-white);
+        width: 100%;
+        max-width: 300px;
+    }
+}
+
+
+// 404 Page
+.not-found-widgets {
+    display: grid;
+    grid-gap: $padding-large;
+    grid-template-columns: 1fr 1fr;
+    margin: $padding-large 0;
+
+    aside {
+        background: rgba($color-accent, 0.2);
+        padding: $padding-large;
+    }
+}
+
+// General
+.left,
+.right,
+.next-link,
+.prev-link {
+    margin: $padding-base;
+}
+
+.left,
+.prev-link,
+.nav-previous {
+    float: left;
+}
+
+.right,
+.next-link,
+.nav-next {
+    float: right;
+}
+
+.center {
+    margin: 0 auto;
     text-align: center;
 }
