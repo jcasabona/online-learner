@@ -20,7 +20,8 @@ function theme_enqueue_styles() {
 
 	// Get the theme data
 	$the_theme = wp_get_theme();
-    wp_enqueue_style( 'online-learner-fonts', '//fonts.googleapis.com/css?family=Merriweather:400,400i,700|Playfair+Display:700', array(), $the_theme->get( 'Version' ) );
+    wp_register_style( 'online-learner-fonts', '//fonts.googleapis.com/css?family=Merriweather:400,400i,700|Playfair+Display:700', array(), $the_theme->get( 'Version' ) );
+    wp_enqueue_style( 'online-learner-fonts' );
     wp_enqueue_style( 'child-understrap-styles', get_stylesheet_directory_uri() . '/css/child-theme.min.css', array( 'online-learner-fonts' ), $the_theme->get( 'Version' ) );
     wp_enqueue_script( 'jquery' );
     wp_enqueue_script( 'popper-scripts', get_template_directory_uri() . '/js/popper.min.js', array(), false);
@@ -103,3 +104,5 @@ function understrap_posted_on() {
 	);
 	echo '<span class="posted-on">' . $posted_on . '</span><span class="byline"> ' . $byline . '</span>'; // WPCS: XSS OK.
 }
+
+require get_stylesheet_directory() . '/inc/editor.php';
